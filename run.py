@@ -19,3 +19,29 @@ def load_data_from_json(file_path):
 def save_data_to_json(file_path, data):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
+
+def main():
+    guitars = []  # List to store guitar dictionaries
+
+    while True:
+        clear_screen()
+        print("Welcome to the Guitar Stock database.\n\n\n")
+        print("Press 0 to search by make")
+        print("Press 1 to search by model")
+        print("Press 2 to add stock to the database")
+        print("Press 3 to remove stock")
+        choice = input("Choose option to continue: ")
+
+        if choice == "0":
+            search_guitar_by_make(guitars)
+        elif choice == "1":
+            search_guitar_by_model(guitars)
+        elif choice == "2":
+            add_stock_to_database(guitars)
+        elif choice == "3":
+            remove_stock_from_database(guitars)
+        else:
+            print("Please select a valid option.")
+            input("Press Enter to continue.")
+
+main()
