@@ -1,0 +1,32 @@
+[
+    {
+        "make": "Fender",
+        "model": "Telecaster",
+        "price": 1700,
+        "stock quantity": "9"
+    },
+    {
+        "make": "Fender",
+        "model": "Stratocaster",
+        "price": 1750,
+        "stock quantity": 10
+    },
+    {
+        "make": "Gibson",
+        "model": "Les Paul",
+        "price": 1200,
+        "stock quantity": "1"
+    },
+    {
+        "make": "Gibson",
+        "model": "Sg",
+        "price": "1299.99",
+        "stock quantity": "5"
+    },
+    {
+        "make": "Yamaha",
+        "model": "Pacifica",
+        "price": "one hundred",
+        "stock quantity": "4"
+    }
+]
