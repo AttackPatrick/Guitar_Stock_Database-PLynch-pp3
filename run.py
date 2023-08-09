@@ -3,15 +3,19 @@ import json
 
 
 def clear_screen():
+    """Clears the terminal screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def display_guitar(guitar):
+    """Displays the details of a guitar"""
     for key, value in guitar.items():
         print(f"{key.capitalize()}: {value}")
 
 
 def load_data_from_json(file_path):
+    """Loads data from a JSON file"""
+  
     if not os.path.exists(file_path):
         return []
     with open(file_path, 'r') as file:
@@ -20,11 +24,14 @@ def load_data_from_json(file_path):
 
 
 def save_data_to_json(file_path, data):
+    """Saves data to a JSON file"""
+  
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
 
 def search_guitar_by_make(guitars):
+    """Searches for guitars by make"""
     clear_screen()
     print("Please type the make of guitar you want to find:")
     make_to_find = input("Make: ").strip().lower().replace(" ", "")
@@ -40,12 +47,10 @@ def search_guitar_by_make(guitars):
     else:
         print("No guitars found with that make.")
     input("Press Enter to return to the main menu.")
-    else:
-        print("No guitars found with that make.")
-    input("Press Enter to return to the main menu.")
 
 
 def search_guitar_by_model(guitars):
+    """Searches for guitars by model"""
     clear_screen()
     print("Please type the model of guitar you want to find:")
     model_to_find = input("Model: ").strip().lower().replace(" ", "")
@@ -64,9 +69,10 @@ def search_guitar_by_model(guitars):
 
 
 def add_stock_to_database(guitars):
+    """Adds stock to the database"""
     while True:
         clear_screen()
-        print("What item would you like to add to the stock?")
+        print("What item would you like to add to the stock? Enter 2 to return to the main menu")
         make = input("Make: ").capitalize()
         model = input("Model: ").capitalize()
 
@@ -110,7 +116,10 @@ def add_stock_to_database(guitars):
         input("Press Enter to return to the main menu.")
         return
 
+
 def remove_stock_from_database(guitars):
+    """Removes stock from the database"""
+  
     while True:
         clear_screen()
         print("What item would you like to remove from the stock?")
@@ -149,6 +158,8 @@ def remove_stock_from_database(guitars):
 
 
 def update_price_in_database(guitars):
+    """Updates the price of an item in the database"""
+  
     clear_screen()
     print("What item's price would you like to update?")
     make_to_update = input("Make: ").capitalize()

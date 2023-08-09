@@ -26,7 +26,7 @@
     {
         "make": "Yamaha",
         "model": "Pacifica",
-        "price": "one hundred",
+        "price": 209.5,
         "stock quantity": "4"
     }
 ]
