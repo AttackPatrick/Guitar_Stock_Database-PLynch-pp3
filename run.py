@@ -160,9 +160,16 @@ def update_price_in_database(guitars):
         display_guitar(guitar_to_update)
 
         new_price = input("Enter the new price for this item: ")
-        guitar_to_update["price"] = new_price
-
-        print("Price updated successfully.")
+        try:
+            new_price_float = float(new_price)
+            if new_price_float < 0:
+                raise ValueError("Price must be zero or above")
+            
+            guitar_to_update["price"] = new_price_float
+            print("Price updated successfully.")
+        except ValueError:
+            print("Invalid price. Please enter a valid non-negative number.")
+        
         input("Press Enter to return to the main menu.")
     else:
         print("Guitar not found in the database.")
